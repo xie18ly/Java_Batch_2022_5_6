@@ -1,23 +1,21 @@
 import AssignmentOne.DoSomething;
 import AssignmentOne.MergeTwoArray;
 import AssignmentOne.SecondLargest;
-import AssignmentThree.ListMap;
+import AssignmentThree.*;
 import AssignmentTwo.Counter;
 import AssignmentTwo.Criteria;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args){
-        List A =  new ArrayList(Arrays.asList(1, 2, 3, 4, 10));
-        HashMap<String, String> B = new HashMap<>();
-        B.put("a","1");
-        B.put("b","2");
-        B.put("c","10");
-        ListMap map = new ListMap(A,B);
-        System.out.println(map.getDiff());
+        List<Shape> shapeCollection = new ArrayList<>();
+        shapeCollection.add(new Circle(2.9));
+        shapeCollection.add(new Square((10.1)));
+        shapeCollection.add(new Rectangle(2,4.5));
+        Collections.sort(shapeCollection);
+        for(Shape s: shapeCollection){
+            System.out.println(s.getArea());
+        }
     }
 }
