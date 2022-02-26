@@ -19,7 +19,9 @@ public class ReaderThread implements Runnable{
     public void run() {
         BufferedReader br = null;
         try{
-            br = new BufferedReader(new FileReader(new File("input.txt")));
+            File file = new File("/Users/ling/IdeaProjects/Java_Batch_2022_5_6/src/main/java/AssignmentFour/input.txt");
+            System.out.println(file.getCanonicalPath());
+            br = new BufferedReader(new FileReader(file));
             String buffer = null;
             while((buffer = br.readLine()) != null){
                 queue.put(buffer);

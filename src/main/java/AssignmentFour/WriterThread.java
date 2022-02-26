@@ -45,7 +45,6 @@ public class WriterThread implements Runnable{
         int number = 0;
         int sign = 1;
         char[] array = str.toCharArray();
-        Stack<Integer> stack = new Stack<>();
         for(int i = 0; i < s.length(); i++){
             char c = s.charAt(i);
             if(Character.isDigit(c)) {
@@ -58,6 +57,7 @@ public class WriterThread implements Runnable{
                 number = 0;
             }
         }
-        return s +String.valueOf(result);
+        if(number != 0) result += sign * number;
+        return s +" = "+String.valueOf(result);
     }
 }
