@@ -6,19 +6,16 @@ import AssignmentOne.SecondLargest;
 import AssignmentThree.*;
 import AssignmentTwo.Counter;
 import AssignmentTwo.Criteria;
+import Week4.CRUDTest;
 
+import java.sql.SQLException;
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class Main {
-    public static void main(String[] args){
-        BlockingQueue<String> queue = new ArrayBlockingQueue<String>(1024);
-
-        ReaderThread reader = new ReaderThread(queue);
-        WriterThread writer = new WriterThread(queue);
-
-        new Thread(reader).start();
-        new Thread(writer).start();
+    public static void main(String[] args) throws SQLException {
+        CRUDTest test = new CRUDTest();
+        test.doTest();
     }
 }
